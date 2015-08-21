@@ -164,6 +164,12 @@ public class PuzzlePresentation : MonoBehaviour
 			gem = gridCell.RetrieveGemCell();
 			if (gem == null)
 				throw new UnityException("RemoveGemAtIndex is null: " + index.ToString());
+			if (gem.GemFg != null)
+			{
+				//OnGemGfRemoved();
+				GemFgPool.Instance.RemoveOneGemFg(gem.GemFg);
+			}
+
 			OnGemCellRemoved(gem);
 			GemCellPool.Instance.RemoveOneGemCell(gem);
 			//GemPool.Instance.RemoveOneGem(gem);

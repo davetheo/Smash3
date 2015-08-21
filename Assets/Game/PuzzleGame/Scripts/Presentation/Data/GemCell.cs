@@ -167,6 +167,10 @@ public class GemCell : MonoBehaviour
 	public void InitFgGem(int fgGem)
 	{
 		GemFg = null;
+		if (fgGem == GemFGConverter.NoFgGem)
+			return;
+		GemFg = GemFgPool.Instance.GetOneGemFg(fgGem);
+		GemFg.transform.SetParent(this.gameObject.transform);
 	}
 
 	public void AddFg(GemFg gem)

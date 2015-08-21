@@ -76,8 +76,10 @@
     <Compile Include="Assets\Game\Cloud\Scripts\AccountManagement\SmashPlayFabManager.cs" />
     <Compile Include="Assets\Game\General\Scripts\GameController.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\BoardCell.cs" />
+    <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\FGSpawnItem.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\SpawnItem.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\GemConverter.cs" />
+    <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\GemFGConverter.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\MatchChecker.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\PuzzleBoard.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\PuzzleBoardController.cs" />

@@ -277,6 +277,7 @@ Transform:
   - {fileID: 1346607779}
   - {fileID: 752419001}
   - {fileID: 262930788}
+  - {fileID: 1265544066}
   m_Father: {fileID: 745589212}
   m_RootOrder: 1
 --- !u!114 &524466135
@@ -302,6 +303,7 @@ GameObject:
   - 114: {fileID: 745589214}
   - 114: {fileID: 745589215}
   - 114: {fileID: 745589216}
+  - 114: {fileID: 745589217}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -383,6 +385,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6d9dc14b99c904bb55017ae1722b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &745589217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745589211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0508ca01ee407e4988ddde20914423c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemTypeList:
+  - Coin
 --- !u!1 &752419000
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +568,14 @@ MonoBehaviour:
     GemName: Nine
     FgName: NoGem
     Probability: 1
+  SeparateFgSpawn: 1
+  FgSpawnList:
+  - Name: None
+    FgName: NoFgGem
+    Probability: 20
+  - Name: Coin
+    FgName: Coin
+    Probability: 1
 --- !u!114 &995957738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +598,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d89a6e0d4d4c546837e2c36f7b6b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1265544065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1265544066}
+  - 114: {fileID: 1265544067}
+  m_Layer: 0
+  m_Name: GemFgPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1265544066
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265544065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 524466134}
+  m_RootOrder: 4
+--- !u!114 &1265544067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265544065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a3e1fe1a2d7944a9eaa10944efefc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GemPrefabList:
+  - Name: Coin
+    Prefab: {fileID: 131652, guid: af9cf836c0fd7174787239514a394ec0, type: 2}
 --- !u!1 &1346607778
 GameObject:
   m_ObjectHideFlags: 0
