@@ -12,6 +12,7 @@ public class PuzzlePresentation : MonoBehaviour
 	public event EventHandler<EventArgs> GemCellRemoved;
 
 	private BoardConfig boardConfig;
+	private Spawner Spawner;
 
 	void Awake()
 	{
@@ -23,6 +24,12 @@ public class PuzzlePresentation : MonoBehaviour
 		// Furthermore we make sure that we don't destroy between scenes (this is optional)
 		DontDestroyOnLoad(gameObject);
 	}
+
+	void Start()
+	{
+		Spawner = SpawnController.Instance.CurrentSpawner;
+	}
+
 
 	// Update is called once per frame
 	void Update()
@@ -106,7 +113,7 @@ public class PuzzlePresentation : MonoBehaviour
 		{
 			row--;
 			pos.y += boardConfig.CellSpacing.y;
-			var newGemCell = Spawner.Instance.GemCellSpawn();
+			var newGemCell = Spawner.GemCellSpawn();
 			newGemCell.transform.localPosition = pos;
 			var index = boardConfig.GetIndex(column, row);
 

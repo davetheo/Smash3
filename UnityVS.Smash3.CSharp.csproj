@@ -78,11 +78,13 @@
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\BoardCell.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\FGSpawnItem.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\SpawnItem.cs" />
+    <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\GemBGConverter.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\GemConverter.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\GemFGConverter.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\MatchChecker.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\PuzzleBoard.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\PuzzleBoardController.cs" />
+    <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\SpawnController.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Spawner.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\BoardConfig.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\ComponentContainer.cs" />

@@ -141,6 +141,47 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fbc8ebde8f3d15047b1a75516e418dd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &191854442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 191854443}
+  - 114: {fileID: 191854444}
+  m_Layer: 0
+  m_Name: SpawnController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &191854443
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191854442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 927077998}
+  m_Father: {fileID: 745589212}
+  m_RootOrder: 0
+--- !u!114 &191854444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191854442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b6a26d83dd4a34b87d45082dcc474d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentSpawner: {fileID: 927077999}
 --- !u!1 &262930787
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +351,66 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 412513940}
+--- !u!1 &494921458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 494921461}
+  - 114: {fileID: 494921460}
+  - 114: {fileID: 494921459}
+  m_Layer: 0
+  m_Name: Converters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &494921459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494921458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0508ca01ee407e4988ddde20914423c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemTypeList:
+  - Coin
+--- !u!114 &494921460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494921458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08319bc2f41aecd40ad2796737691cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemTypeList:
+  - Ace
+  - King
+  - Queen
+  - Jack
+  - Ten
+  - Nine
+--- !u!4 &494921461
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494921458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 824962887}
+  m_RootOrder: 0
 --- !u!1 &524466133
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +443,7 @@ Transform:
   - {fileID: 262930788}
   - {fileID: 1265544066}
   m_Father: {fileID: 745589212}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &524466135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,9 +766,7 @@ GameObject:
   - 4: {fileID: 745589212}
   - 114: {fileID: 745589213}
   - 114: {fileID: 745589214}
-  - 114: {fileID: 745589215}
   - 114: {fileID: 745589216}
-  - 114: {fileID: 745589217}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -685,11 +784,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 191854443}
   - {fileID: 995957736}
   - {fileID: 524466134}
   - {fileID: 1982825757}
   m_Father: {fileID: 824962887}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &745589213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,24 +820,6 @@ MonoBehaviour:
   Width: 8
   Height: 8
   CellSpacing: {x: 74, y: 74}
---- !u!114 &745589215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 745589211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08319bc2f41aecd40ad2796737691cdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemTypeList:
-  - Ace
-  - King
-  - Queen
-  - Jack
-  - Ten
-  - Nine
 --- !u!114 &745589216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,19 +831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6d9dc14b99c904bb55017ae1722b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &745589217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 745589211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0508ca01ee407e4988ddde20914423c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemTypeList:
-  - Coin
 --- !u!1 &752419000
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc4dc69bf24b1346a5ae01312f92cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemConverter: {fileID: 745589215}
+  GemConverter: {fileID: 0}
   GemPrefabList:
   - Name: Ace
     Prefab: {fileID: 184564, guid: 34849cb43de02b84a895b3161de426a6, type: 2}
@@ -841,6 +910,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 494921461}
   - {fileID: 745589212}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -963,6 +1033,85 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860971266}
+--- !u!1 &927077997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 927077998}
+  - 114: {fileID: 927077999}
+  m_Layer: 0
+  m_Name: RegularSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927077998
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927077997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 191854443}
+  m_RootOrder: 0
+--- !u!114 &927077999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927077997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714844a16efd84141aad405751f21689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Regular
+  SpawnList:
+  - Name: Ace
+    BgName: NoGem
+    GemName: Ace
+    FgName: NoGem
+    Probability: 1
+  - Name: King
+    BgName: NoGem
+    GemName: King
+    FgName: NoGem
+    Probability: 1
+  - Name: Queen
+    BgName: NoGem
+    GemName: Queen
+    FgName: NoGem
+    Probability: 1
+  - Name: Jack
+    BgName: NoGem
+    GemName: Jack
+    FgName: NoGem
+    Probability: 1
+  - Name: Ten
+    BgName: NoGem
+    GemName: Ten
+    FgName: NoGem
+    Probability: 1
+  - Name: Nine
+    BgName: NoGem
+    GemName: Nine
+    FgName: NoGem
+    Probability: 1
+  SeparateFgSpawn: 1
+  FgSpawnList:
+  - Name: None
+    FgName: NoFgGem
+    Probability: 60
+  - Name: Coin
+    FgName: Coin
+    Probability: 1
 --- !u!1 &955098973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1249,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 995957736}
-  - 114: {fileID: 995957737}
   - 114: {fileID: 995957738}
   - 114: {fileID: 995957739}
   m_Layer: 0
@@ -1121,58 +1269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745589212}
-  m_RootOrder: 0
---- !u!114 &995957737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 995957735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714844a16efd84141aad405751f21689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Regular
-  SpawnList:
-  - Name: Ace
-    BgName: NoGem
-    GemName: Ace
-    FgName: NoGem
-    Probability: 1
-  - Name: King
-    BgName: NoGem
-    GemName: King
-    FgName: NoGem
-    Probability: 1
-  - Name: Queen
-    BgName: NoGem
-    GemName: Queen
-    FgName: NoGem
-    Probability: 1
-  - Name: Jack
-    BgName: NoGem
-    GemName: Jack
-    FgName: NoGem
-    Probability: 1
-  - Name: Ten
-    BgName: NoGem
-    GemName: Ten
-    FgName: NoGem
-    Probability: 1
-  - Name: Nine
-    BgName: NoGem
-    GemName: Nine
-    FgName: NoGem
-    Probability: 1
-  SeparateFgSpawn: 1
-  FgSpawnList:
-  - Name: None
-    FgName: NoFgGem
-    Probability: 20
-  - Name: Coin
-    FgName: Coin
-    Probability: 1
+  m_RootOrder: 1
 --- !u!114 &995957738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2516,7 +2613,7 @@ Transform:
   m_Children:
   - {fileID: 71303374}
   m_Father: {fileID: 745589212}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &2075238183
 GameObject:
   m_ObjectHideFlags: 0

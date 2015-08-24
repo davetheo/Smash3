@@ -7,7 +7,6 @@ public class PuzzleBoardController : MonoBehaviour
 	#region Component connectors
 
 	private BoardConfig BoardConfig;
-	private Spawner Spawner;
 
 	#endregion
 
@@ -82,11 +81,6 @@ public class PuzzleBoardController : MonoBehaviour
 		if (MatchChecker == null)
 		{
 			throw new UnityException("PuzzleBoardController must have a MatchChecker component attached.");
-		}
-		Spawner = GetComponent<Spawner>() as Spawner;
-		if (Spawner == null)
-		{
-			throw new UnityException("PuzzleBoardController must have a Spawner component attached.");
 		}
 	}
 

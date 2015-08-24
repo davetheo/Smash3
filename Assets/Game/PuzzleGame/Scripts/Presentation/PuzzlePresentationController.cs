@@ -17,6 +17,7 @@ public class PuzzlePresentationController : MonoBehaviour
 	#endregion
 
 	private PuzzleBoard PuzzleBoard;
+	private Spawner Spawner;
 
 	public event EventHandler<EventArgs> GemSwapFinished;
 
@@ -40,7 +41,7 @@ public class PuzzlePresentationController : MonoBehaviour
 		{
 			throw new UnityException("PuzzlePresentationController must have a GemPool component attached or as a child.");
 		}
-
+		Spawner = SpawnController.Instance.CurrentSpawner;
 		PuzzlePresentation.Instance.InitialiseBoard();
 	}
 	
@@ -61,11 +62,11 @@ public class PuzzlePresentationController : MonoBehaviour
 			{
 				for (int x = 0; x < BoardConfig.Instance.Width; x++)
 				{
-					PuzzlePresentation.Instance.ChangeGemCellAtPos(x, y, Spawner.Instance.GemCellSpawn());
+					PuzzlePresentation.Instance.ChangeGemCellAtPos(x, y, Spawner.GemCellSpawn());
 
 					while (PresentationMatchChecker.Instance.CheckMatchAtCell(x, y) == true)
 					{
-						PuzzlePresentation.Instance.ChangeGemCellAtPos(x, y, Spawner.Instance.GemCellSpawn());
+						PuzzlePresentation.Instance.ChangeGemCellAtPos(x, y, Spawner.GemCellSpawn());
 					}
 				}
 			}

@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
-	public static Spawner Instance { get; private set; }
-
 	#region Inspector properties
 
 	public string Name;
@@ -25,13 +23,6 @@ public class Spawner : MonoBehaviour
 
 	void Awake()
 	{
-		if (Instance != null && Instance != this)
-		{
-			Destroy(gameObject);
-		}
-		Instance = this;
-		// Furthermore we make sure that we don't destroy between scenes (this is optional)
-		DontDestroyOnLoad(gameObject);
 	}
 
 
