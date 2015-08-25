@@ -5,6 +5,9 @@ using System;
 public class Gem : MonoBehaviour 
 {
 	public string Id;
+	public bool AllowBG = true;
+	public bool AllowFG = true;
+	public int boardLimit = 0;
 	public int Type { get; set; }
 
 	/// <summary>

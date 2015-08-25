@@ -4,6 +4,7 @@ using System.Collections;
 public class GemFg : MonoBehaviour 
 {
 	public string Id;
+	public int boardLimit = 0;
 	public int Type { get; set; }
 
 	public GemCell GemCell { get; set; }

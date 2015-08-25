@@ -10,8 +10,6 @@ public class PuzzlePresentationController : MonoBehaviour
 	private float GemSwapTime = 0.4f;
 	#region Component connectors
 
-	private GemPool GemPool;
-
 	private bool isSwapping;
 
 	#endregion
@@ -36,11 +34,6 @@ public class PuzzlePresentationController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		GemPool = GetComponentInChildren<GemPool>() as GemPool;
-		if (GemPool == null)
-		{
-			throw new UnityException("PuzzlePresentationController must have a GemPool component attached or as a child.");
-		}
 		Spawner = SpawnController.Instance.CurrentSpawner;
 		PuzzlePresentation.Instance.InitialiseBoard();
 	}

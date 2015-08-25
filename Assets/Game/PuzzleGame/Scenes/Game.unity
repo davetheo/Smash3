@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b6a26d83dd4a34b87d45082dcc474d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentSpawner: {fileID: 1261387452}
+  CurrentSpawner: {fileID: 927077999}
 --- !u!1 &262930787
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 524466134}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &262930789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +247,12 @@ MonoBehaviour:
     Prefab: {fileID: 103714, guid: db6b74fc4c4539e4391ebba60c41dff0, type: 2}
   - Name: YellowTrans
     Prefab: {fileID: 120366, guid: ab6b30bb2febb984bbc77f7c07f0a7b3, type: 2}
+  - Name: Special01
+    Prefab: {fileID: 158074, guid: 09760cd681b9ea1428a5bfac107e8892, type: 2}
+  - Name: Special02
+    Prefab: {fileID: 152708, guid: 744916ea565fb9448a9b2a8c2cbf3202, type: 2}
+  - Name: Special03
+    Prefab: {fileID: 122534, guid: 5e31f164aa79ef742a5ff86647186bf5, type: 2}
 --- !u!1 &324224271
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +425,9 @@ MonoBehaviour:
   - PurpleTrans
   - RedTrans
   - YellowTrans
+  - Special01
+  - Special02
+  - Special03
 --- !u!4 &494921461
 Transform:
   m_ObjectHideFlags: 0
@@ -477,7 +486,6 @@ Transform:
   m_Children:
   - {fileID: 324224272}
   - {fileID: 1346607779}
-  - {fileID: 752419001}
   - {fileID: 262930788}
   - {fileID: 1265544066}
   - {fileID: 1219537850}
@@ -870,59 +878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6d9dc14b99c904bb55017ae1722b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &752419000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 752419001}
-  - 114: {fileID: 752419002}
-  m_Layer: 0
-  m_Name: GemPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &752419001
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 752419000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 524466134}
-  m_RootOrder: 2
---- !u!114 &752419002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 752419000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc4dc69bf24b1346a5ae01312f92cb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GemConverter: {fileID: 0}
-  GemPrefabList:
-  - Name: Ace
-    Prefab: {fileID: 184564, guid: 34849cb43de02b84a895b3161de426a6, type: 2}
-  - Name: King
-    Prefab: {fileID: 156362, guid: b5ece94c0e7cd4b47a904691a5be68f4, type: 2}
-  - Name: Queen
-    Prefab: {fileID: 120546, guid: db600485061889e449d5516a697b4526, type: 2}
-  - Name: Jack
-    Prefab: {fileID: 154582, guid: 7c90f0c540e786947a3c3800d8bde71d, type: 2}
-  - Name: Ten
-    Prefab: {fileID: 189420, guid: 3e55700c1e428394f9e836410b86a124, type: 2}
-  - Name: Nine
-    Prefab: {fileID: 129850, guid: 4b3ae861c6fbfbb479f5c355548f549a, type: 2}
 --- !u!1 &824962886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,37 +1072,52 @@ MonoBehaviour:
     BgName: NoGem
     GemName: Ace
     FgName: NoGem
-    Probability: 1
+    Probability: 1000
   - Name: King
     BgName: NoGem
     GemName: King
     FgName: NoGem
-    Probability: 1
+    Probability: 1000
   - Name: Queen
     BgName: NoGem
     GemName: Queen
     FgName: NoGem
-    Probability: 1
+    Probability: 1000
   - Name: Jack
     BgName: NoGem
     GemName: Jack
     FgName: NoGem
-    Probability: 1
+    Probability: 1000
   - Name: Ten
     BgName: NoGem
     GemName: Ten
     FgName: NoGem
-    Probability: 1
+    Probability: 1000
   - Name: Nine
     BgName: NoGem
     GemName: Nine
     FgName: NoGem
-    Probability: 1
+    Probability: 1000
+  - Name: Special01
+    BgName: NoGem
+    GemName: Special01
+    FgName: NoGem
+    Probability: 10
+  - Name: Special02
+    BgName: NoGem
+    GemName: Special02
+    FgName: NoGem
+    Probability: 10
+  - Name: Special03
+    BgName: NoGem
+    GemName: Special03
+    FgName: NoGem
+    Probability: 10
   SeparateFgSpawn: 1
   FgSpawnList:
   - Name: None
     FgName: NoFgGem
-    Probability: 30
+    Probability: 60
   - Name: Coin
     FgName: Coin
     Probability: 1
@@ -1699,7 +1669,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 524466134}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!114 &1219537851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1916,7 +1886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 524466134}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &1265544067
 MonoBehaviour:
   m_ObjectHideFlags: 0

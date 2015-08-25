@@ -84,15 +84,20 @@ public class Spawner : MonoBehaviour
 
 	private GemCell ConvertToGemCell(SpawnItem spawn) 
 	{
-		int bg = GemBGConverter.GetGemInt(spawn.BgName);
 		int gem = GemConverter.GetGemInt(spawn.GemName);
-		int fg = GemFGConverter.GetGemInt(spawn.FgName);
-
 		GemCell newGemCell = GemCellPool.Instance.GetOneGemCell(gem);
 		newGemCell.InitGem();
-		newGemCell.InitBgGem(bg);
-		newGemCell.InitFgGem(fg);
-
+		var thisGem = newGemCell.Gem;
+		if (thisGem.AllowBG)
+		{
+			int bg = GemBGConverter.GetGemInt(spawn.BgName);
+			newGemCell.InitBgGem(bg);
+		}
+		if (thisGem.AllowFG)
+		{
+			int fg = GemFGConverter.GetGemInt(spawn.FgName);
+			newGemCell.InitFgGem(fg);
+		}
 		return newGemCell;
 	}
 
