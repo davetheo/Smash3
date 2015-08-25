@@ -168,6 +168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 927077998}
+  - {fileID: 1261387451}
   m_Father: {fileID: 745589212}
   m_RootOrder: 0
 --- !u!114 &191854444
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b6a26d83dd4a34b87d45082dcc474d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentSpawner: {fileID: 927077999}
+  CurrentSpawner: {fileID: 1261387452}
 --- !u!1 &262930787
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +235,18 @@ MonoBehaviour:
     Prefab: {fileID: 160538, guid: 1ad0fea3190e015459d3eb81f97089bb, type: 2}
   - Name: Nine
     Prefab: {fileID: 197932, guid: 8ddde143f2d07734e9cb7665acdb8361, type: 2}
+  - Name: BlueTrans
+    Prefab: {fileID: 186968, guid: dd28136c7d746bb4fa1c5ea59c1fd3eb, type: 2}
+  - Name: GreenTrans
+    Prefab: {fileID: 118030, guid: 0060686c5bdab524894d900014f330c3, type: 2}
+  - Name: GreyTrans
+    Prefab: {fileID: 153686, guid: f1ee747861009744ea30d5f002160cab, type: 2}
+  - Name: PurpleTrans
+    Prefab: {fileID: 130046, guid: 855799122b8cf414db83ed971a45eb84, type: 2}
+  - Name: RedTrans
+    Prefab: {fileID: 103714, guid: db6b74fc4c4539e4391ebba60c41dff0, type: 2}
+  - Name: YellowTrans
+    Prefab: {fileID: 120366, guid: ab6b30bb2febb984bbc77f7c07f0a7b3, type: 2}
 --- !u!1 &324224271
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +374,7 @@ GameObject:
   - 4: {fileID: 494921461}
   - 114: {fileID: 494921460}
   - 114: {fileID: 494921459}
+  - 114: {fileID: 494921462}
   m_Layer: 0
   m_Name: Converters
   m_TagString: Untagged
@@ -399,6 +413,12 @@ MonoBehaviour:
   - Jack
   - Ten
   - Nine
+  - BlueTrans
+  - GreenTrans
+  - GreyTrans
+  - PurpleTrans
+  - RedTrans
+  - YellowTrans
 --- !u!4 &494921461
 Transform:
   m_ObjectHideFlags: 0
@@ -411,6 +431,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 824962887}
   m_RootOrder: 0
+--- !u!114 &494921462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494921458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82431c3655d3b364299c8f1cf5094845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemTypeList:
+  - AceBg
+  - KingBg
+  - QueenBg
+  - JackBg
+  - TenBg
+  - NineBg
 --- !u!1 &524466133
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +480,7 @@ Transform:
   - {fileID: 752419001}
   - {fileID: 262930788}
   - {fileID: 1265544066}
+  - {fileID: 1219537850}
   m_Father: {fileID: 745589212}
   m_RootOrder: 2
 --- !u!114 &524466135
@@ -1108,10 +1147,12 @@ MonoBehaviour:
   FgSpawnList:
   - Name: None
     FgName: NoFgGem
-    Probability: 60
+    Probability: 30
   - Name: Coin
     FgName: Coin
     Probability: 1
+  SeparateBgSpawn: 1
+  BgSpawnList: []
 --- !u!1 &955098973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1672,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1194152004}
+--- !u!1 &1219537849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1219537850}
+  - 114: {fileID: 1219537851}
+  m_Layer: 0
+  m_Name: GemBgPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219537850
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1219537849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 524466134}
+  m_RootOrder: 5
+--- !u!114 &1219537851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1219537849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ac54e84de5a174481c2c70660bf3e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GemPrefabList:
+  - Name: AceBg
+    Prefab: {fileID: 111978, guid: e6b5831f84f4ada4fba5257bc3fa9b26, type: 2}
+  - Name: KingBg
+    Prefab: {fileID: 122420, guid: 920be3385c3747f4d9cc925a38f8e45a, type: 2}
+  - Name: QueenBg
+    Prefab: {fileID: 173264, guid: 52afc5175b4242946a85b20bcb32f64a, type: 2}
+  - Name: JackBg
+    Prefab: {fileID: 116106, guid: fd79b6cdcec65c74b8a29d1bd43c5bd2, type: 2}
+  - Name: TenBg
+    Prefab: {fileID: 127270, guid: 9b905f623b3f0c14996c12e7803240c1, type: 2}
+  - Name: NineBg
+    Prefab: {fileID: 108080, guid: 8ee41c2ee1ab91f42afc085f3d51c339, type: 2}
 --- !u!1 &1243022381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1787,108 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1243022381}
+--- !u!1 &1261387450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1261387451}
+  - 114: {fileID: 1261387452}
+  m_Layer: 0
+  m_Name: TransSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1261387451
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261387450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 191854443}
+  m_RootOrder: 1
+--- !u!114 &1261387452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261387450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714844a16efd84141aad405751f21689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Transparent
+  SpawnList:
+  - Name: Blue
+    BgName: NoGem
+    GemName: BlueTrans
+    FgName: NoGem
+    Probability: 1
+  - Name: Green
+    BgName: NoGem
+    GemName: GreenTrans
+    FgName: NoGem
+    Probability: 1
+  - Name: Grey
+    BgName: NoGem
+    GemName: GreyTrans
+    FgName: NoGem
+    Probability: 1
+  - Name: Purple
+    BgName: NoGem
+    GemName: PurpleTrans
+    FgName: NoGem
+    Probability: 1
+  - Name: Red
+    BgName: NoGem
+    GemName: RedTrans
+    FgName: NoGem
+    Probability: 1
+  - Name: Yellow
+    BgName: NoGem
+    GemName: YellowTrans
+    FgName: NoGem
+    Probability: 1
+  SeparateFgSpawn: 1
+  FgSpawnList:
+  - Name: None
+    FgName: NoFgGem
+    Probability: 60
+  - Name: Coin
+    FgName: Coin
+    Probability: 1
+  SeparateBgSpawn: 1
+  BgSpawnList:
+  - Name: None
+    BgName: NoBgGem
+    Probability: 100
+  - Name: AceBg
+    BgName: AceBg
+    Probability: 5
+  - Name: KingBg
+    BgName: KingBg
+    Probability: 5
+  - Name: QueenBg
+    BgName: QueenBg
+    Probability: 5
+  - Name: JackBg
+    BgName: JackBg
+    Probability: 5
+  - Name: TenBg
+    BgName: TenBg
+    Probability: 5
+  - Name: NineBg
+    BgName: NineBg
+    Probability: 5
 --- !u!1 &1265544065
 GameObject:
   m_ObjectHideFlags: 0

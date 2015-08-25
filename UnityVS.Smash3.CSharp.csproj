@@ -75,6 +75,7 @@
     <Compile Include="Assets\Game\Cloud\Scripts\AccountManagement\FacebookManager.cs" />
     <Compile Include="Assets\Game\Cloud\Scripts\AccountManagement\SmashPlayFabManager.cs" />
     <Compile Include="Assets\Game\General\Scripts\GameController.cs" />
+    <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\BGSpawnItem.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\BoardCell.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\FGSpawnItem.cs" />
     <Compile Include="Assets\Game\PuzzleGame\Scripts\Board\Data\SpawnItem.cs" />

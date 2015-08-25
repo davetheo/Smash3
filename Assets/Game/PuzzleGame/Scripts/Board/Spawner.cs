@@ -10,14 +10,16 @@ public class Spawner : MonoBehaviour
 	public List<SpawnItem> SpawnList;
 	public bool SeparateFgSpawn = true;
 	public List<FGSpawnItem> FgSpawnList;
+	public bool SeparateBgSpawn = true;
+	public List<BGSpawnItem> BgSpawnList;
 
 	#endregion
 
 	#region private variables
 
+	private float TotalBgProbability;
 	private float TotalProbability;
 	private float TotalFgProbability;
-	private GemConverter GemConverter;
 
 	#endregion
 
@@ -29,7 +31,7 @@ public class Spawner : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		GemConverter = GameObject.Find("GameController").GetComponent<GemConverter>();
+		CalculateBgProbability();
 		CalculateProbability();
 		CalculateFgProbability();
 	}
@@ -37,12 +39,34 @@ public class Spawner : MonoBehaviour
 	public GemCell GemCellSpawn()
 	{
 		var spawn = GetSpawnItem();
+		spawn.BgName = BgGemSpawn();
 		spawn.FgName = FgGemSpawn();
 		return ConvertToGemCell(spawn);
 	}
 
+	private string BgGemSpawn()
+	{
+		if (BgSpawnList.Count == 0)
+			return GemBGConverter.NoBgGemString;
+		float value = Random.Range(0, TotalBgProbability);
+		// get rid of the complete edge case first
+		while (value == TotalBgProbability)
+			value = Random.Range(0, TotalBgProbability);
+		foreach (var spawn in BgSpawnList)
+		{
+			if (value < spawn.Probability)
+			{
+				return spawn.BgName;
+			}
+			value -= spawn.Probability;
+		}
+		return GemBGConverter.NoBgGemString;
+	}
+
 	private string FgGemSpawn()
 	{
+		if (FgSpawnList.Count == 0)
+			return GemFGConverter.NoFgGemString;
 		float value = Random.Range(0, TotalFgProbability);
 		// get rid of the complete edge case first
 		while (value == TotalFgProbability)
@@ -60,7 +84,7 @@ public class Spawner : MonoBehaviour
 
 	private GemCell ConvertToGemCell(SpawnItem spawn) 
 	{
-		int bg = GemConverter.GetGemInt(spawn.BgName);
+		int bg = GemBGConverter.GetGemInt(spawn.BgName);
 		int gem = GemConverter.GetGemInt(spawn.GemName);
 		int fg = GemFGConverter.GetGemInt(spawn.FgName);
 
@@ -107,6 +131,14 @@ public class Spawner : MonoBehaviour
 		foreach (var spawn in FgSpawnList)
 		{
 			TotalFgProbability += spawn.Probability;
+		}
+	}
+	private void CalculateBgProbability()
+	{
+		TotalBgProbability = 0f;
+		foreach (var spawn in BgSpawnList)
+		{
+			TotalBgProbability += spawn.Probability;
 		}
 	}
 }

@@ -155,6 +155,10 @@ public class GemCell : MonoBehaviour
 	public void InitBgGem(int bgGem)
 	{
 		GemBg = null;
+		if (bgGem == GemBGConverter.NoBgGem)
+			return;
+		GemBg = GemBgPool.Instance.GetOneGemBg(bgGem);
+		GemBg.transform.SetParent(this.gameObject.transform);
 	}
 
 	public void AddBg(GemBg gem)

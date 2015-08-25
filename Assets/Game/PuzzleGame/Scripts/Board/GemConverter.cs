@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-
-
 public class GemConverter : MonoBehaviour 
 {
 	public static GemConverter Instance { get; private set; }
