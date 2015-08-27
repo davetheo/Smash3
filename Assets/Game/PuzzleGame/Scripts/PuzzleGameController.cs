@@ -48,8 +48,8 @@ public class PuzzleGameController : MonoBehaviour
 		{
 			if (PuzzlePresentation.Instance.IsBusy() == false)
 			{
-				AllGemsHaveSettled();
 				waitForSettle = false;
+				AllGemsHaveSettled();
 			}
 		}
 	}
