@@ -109,6 +109,7 @@ public class PuzzleGameController : MonoBehaviour
 		if (PresentationMatchChecker.Instance.PossibleMoves.Count == 0)
 		{
 			//DoBoardReshuffle();
+			Debug.LogError("What do we do when there's no moves?");
 		}
 	}
 

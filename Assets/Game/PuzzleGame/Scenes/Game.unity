@@ -169,6 +169,7 @@ Transform:
   m_Children:
   - {fileID: 927077998}
   - {fileID: 1261387451}
+  - {fileID: 833023057}
   m_Father: {fileID: 745589212}
   m_RootOrder: 0
 --- !u!114 &191854444
@@ -923,6 +924,102 @@ MonoBehaviour:
   PuzzleBoardController: {fileID: 995957738}
   PuzzlePresentationController: {fileID: 524466135}
   PuzzlePresentation: {fileID: 1346607780}
+--- !u!1 &833023056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 833023057}
+  - 114: {fileID: 833023058}
+  m_Layer: 0
+  m_Name: SpecialSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &833023057
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833023056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 191854443}
+  m_RootOrder: 2
+--- !u!114 &833023058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833023056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714844a16efd84141aad405751f21689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Specials
+  SpawnList:
+  - Name: Ace
+    BgName: NoGem
+    GemName: Ace
+    FgName: NoGem
+    Probability: 1000
+  - Name: King
+    BgName: NoGem
+    GemName: King
+    FgName: NoGem
+    Probability: 1000
+  - Name: Queen
+    BgName: NoGem
+    GemName: Queen
+    FgName: NoGem
+    Probability: 1000
+  - Name: Jack
+    BgName: NoGem
+    GemName: Jack
+    FgName: NoGem
+    Probability: 1000
+  - Name: Ten
+    BgName: NoGem
+    GemName: Ten
+    FgName: NoGem
+    Probability: 1000
+  - Name: Nine
+    BgName: NoGem
+    GemName: Nine
+    FgName: NoGem
+    Probability: 1000
+  - Name: Special01
+    BgName: NoGem
+    GemName: Special01
+    FgName: NoGem
+    Probability: 10
+  - Name: Special02
+    BgName: NoGem
+    GemName: Special02
+    FgName: NoGem
+    Probability: 70
+  - Name: Special03
+    BgName: NoGem
+    GemName: Special03
+    FgName: NoGem
+    Probability: 10
+  SeparateFgSpawn: 1
+  FgSpawnList:
+  - Name: None
+    FgName: NoFgGem
+    Probability: 60
+  - Name: Coin
+    FgName: Coin
+    Probability: 1
+  SeparateBgSpawn: 1
+  BgSpawnList: []
 --- !u!1 &860971266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,21 +1195,6 @@ MonoBehaviour:
     GemName: Nine
     FgName: NoGem
     Probability: 1000
-  - Name: Special01
-    BgName: NoGem
-    GemName: Special01
-    FgName: NoGem
-    Probability: 10
-  - Name: Special02
-    BgName: NoGem
-    GemName: Special02
-    FgName: NoGem
-    Probability: 10
-  - Name: Special03
-    BgName: NoGem
-    GemName: Special03
-    FgName: NoGem
-    Probability: 10
   SeparateFgSpawn: 1
   FgSpawnList:
   - Name: None
